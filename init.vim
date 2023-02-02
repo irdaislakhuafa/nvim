@@ -36,17 +36,21 @@ call plug#begin()
 
 	" Go IDE
 	Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
+	Plug 'ray-x/go.nvim'
+	" floating window support
+	Plug 'ray-x/guihua.lua'
 
 	" live autocomplete
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-	" live autocomplete like vs code
-	"Plug 'neoclide/coc.nvim', {'branch': 'master'}
-	
 	" neovim language client
 	Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}	
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'ray-x/lsp_signature.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter'
+
 	" add icons
-	Plug 'ryanoasis/vim-devicons'
+	"Plug 'ryanoasis/vim-devicons'
 
 	" graphql file support
 	Plug 'jparise/vim-graphql'
@@ -58,8 +62,12 @@ call plug#begin()
 	" multiple cursor plugins
 	Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-	" color scheme
-	Plug 'rktjmp/lush.nvim'
+	" vim test to show code coverage
+	Plug 'vim-test/vim-test'
+
+	" navigator
+	Plug 'ray-x/navigator.lua'
+
 call plug#end()
 
 " enable copy clipboard to system clipboard
@@ -72,62 +80,75 @@ set background=dark
 noremap <C-l> :NERDTreeToggle<CR>
 
 " === Go Environment ===
-" - run go error check after write it
-"autocmd! bufwritepost *.go :GoErrCheck
+augroup go_env
+	
+	" - enable go autocomplete at start up
+	let g:deoplete#enable_at_startup = 1
+	
+	" - enable hightlight type in Go
+	let g:go_highlight_type=1
+	
+	" - enable Go hightlight generated tags
+	let g:go_highlight_generate_tags=1
+	
+	" - enable hightlight operators in Go
+	let g:go_highlight_operators=1
+	
+	" - enable hightlight extra type in Go
+	let g:go_highlight_extra_types=1
+	
+	" - enable hightlight function in Go
+	let g:go_highlight_functions=1
+	
+	" - enable hightlight on call function
+	let g:go_highlight_function_calls=1
+	
+	" - enable hightlight on Go fields
+	let g:go_highlight_fields=1
+	
+	" - enable hightlight for build constrains Go
+	let g:go_highlight_build_constraints=1
+	
+	" - disable gopls in fatih/vim-go  because i need go commands from
+	"   vim-go but ray-x/go.nvim are more better for auto complete and
+	"   each plugin above use different gopls and consume much memory
+	let g:go_fmt_command = "goimports"
 
-" - enable go autocomplete at start up
-let g:deoplete#enable_at_startup = 1
+	" - pop up go docs
+	"let g:go_doc_popup_window=1
+	
+	" - enable coc global extension
+	"let g:coc_global_extensions = ['coc-go']
 
-" - enable hightlight type in Go
-let g:go_highlight_type=1
+	" --- shortcut --- 
+	" - add json tags in Go
+	autocmd FileType go noremap <C-j> :GoAddTags<CR>
+	
+	" - go to function/method definition
+	autocmd FileType go noremap <C-d><C-d> :GoDef<CR>
+	
+	" - go to type definition
+	autocmd FileType go noremap <C-d><C-t> :GoDefType<CR>
+	
+	" - go to others function/method definition
+	autocmd FileType go noremap <C-d><C-f> :GoDecls<CR>
+	
+	" - go documentation viewer
+	autocmd FileType go noremap <C-o><C-d> :GoDoc<CR>
+	
+	" - go mod reload
+	autocmd FileType go noremap <C-m><C-r> :GoModReload<CR>
 
-" - enable Go hightlight generated tags
-let g:go_highlight_generate_tags=1
+	" - go fill struct
+	autocmd FileType go noremap <C-f><C-s> :GoFillStruct<CR>
 
-" - enable hightlight operators in Go
-let g:go_highlight_operators=1
-
-" - enable hightlight extra type in Go
-let g:go_highlight_extra_types=1
-
-" - enable hightlight function in Go
-let g:go_highlight_functions=1
-
-" - enable hightlight on call function
-let g:go_highlight_function_calls=1
-
-" - enable hightlight on Go fields
-let g:go_highlight_fields=1
-
-" - enable hightlight for build constrains Go
-let g:go_highlight_build_constraints=1
-
-" --- shortcut --- 
-" - add json tags in Go
-noremap <C-g><C-j> :GoAddTags<CR>
-
-" - go to function/method definition
-noremap <C-g><C-d><C-f> :GoDef<CR>
-
-" - go to type definition
-noremap <C-g><C-d><C-t> :GoDefType<CR>
-
-" - go to others function/method definition
-noremap <C-g><C-f> :GoDecls<CR>
-
-" - go documentation viewer
-noremap <C-g><C-o><C-v> :GoDoc<CR>
-
-" - go mod reload
-noremap <C-g><C-m><C-r> :GoModReload<CR>
-
-" - autocomplete on write
-setlocal omnifunc=go#complete#Complete
-set completeopt=menuone
-" call deoplete#custom#option('omni_patterns', {
-" \ 'go': '[^. *\t]\.\w*',
-" \})
-
+	" - go remove tags
+	autocmd FileType go noremap <C-r><C-t> :GoRemoveTags<CR>
+	
+	" - autocomplete on write
+	"setlocal omnifunc=go#complete#Complete
+	"set completeopt=menuone
+augroup END
 
 
 " === custom autocomplete themes ===
@@ -169,23 +190,50 @@ inoremap ;. ;<CR>
 inoremap ,. ,<CR>
 
 " === my custom keyboard shortcut ===
-" - close window
-noremap <C-i><C-w> :q<CR>
+augroup my_keymap
 
-" - save file
-noremap <C-i><C-s> :w<CR>
+	" - close window
+	noremap <C-i><C-w> :q<CR>
+	
+	" - save file
+	noremap <C-i><C-s> :w<CR>
+	
+	" - save file and exit
+	noremap <C-i><C-x> :x<CR>
+	
+	" - duplicate line
+	noremap <C-i><C-d> :t .<CR>
+	
+	" - save file 
+	noremap <C-s> :w<CR>
 
-" - save file and exit
-noremap <C-i><C-x> :x<CR>
+	" - redo 
+	noremap <C-y> :redo<CR>
 
-" - duplicate line
-noremap <C-i><C-d> :t .<CR>
+	" - go to previus tab
+	noremap <C-b> :e#<CR>
 
-" - save file 
-noremap <C-s> :w<CR>
+	" - resize vertical+
+	noremap <C-w><C-right> :vertical res +10<CR>
+
+	" - resize vertical-
+	noremap <C-w><C-left> :vertical res -10<CR>
+
+	" - resize horizontal+
+	noremap <C-w><C-up> :res +10<CR>
+
+	" - resize horizontal-
+	noremap <C-w><C-down> :res -10<CR>
+augroup END
 
 " === enable autocomplete with neovim language client
 let g:LanguageClient_serverCommands = {'go': ['gopls']}
-" autocomplete with deoplete
-autocmd FileType go call deoplete#enable()
 
+" === session
+augroup save_session
+	" - save session
+	autocmd VimLeave * mksession! .session.vim
+	" - load session
+	autocmd VimEnter * source .session.vim
+augroup END
+autocmd! save_session
