@@ -10,10 +10,6 @@ runtime! archlinux.vim
 " i dont know what is this 
 helptags ~/.config/nvim/doc
 
-" default key map
-""inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P>
-""inoremap <buffer> <C-S-Space> <C-X><C-U><C-P>
-
 " enable mouse
 set mouse+=a
 
@@ -29,25 +25,29 @@ set smartindent
 " disable swapfile
 set noswapfile
 
+" enable lua support
+let g:lua_enabled=1
+
 " plugins
 call plug#begin()
 	" nerdtree file browser 
 	Plug 'scrooloose/nerdtree'
 
+	" fzf file browser
+	Plug 'junegunn/fzf'
+
 	" Go IDE
 	Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
-	Plug 'ray-x/go.nvim'
-	" floating window support
-	Plug 'ray-x/guihua.lua'
+	
+	" Java IDE
+	Plug 'mfussenegger/nvim-jdtls'
 
 	" live autocomplete
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 	" neovim language client
-	Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}	
+	Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': './install.sh'}
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'ray-x/lsp_signature.nvim'
-	Plug 'nvim-treesitter/nvim-treesitter'
 
 	" add icons
 	"Plug 'ryanoasis/vim-devicons'
@@ -64,9 +64,6 @@ call plug#begin()
 
 	" vim test to show code coverage
 	Plug 'vim-test/vim-test'
-
-	" navigator
-	Plug 'ray-x/navigator.lua'
 
 call plug#end()
 
@@ -224,6 +221,9 @@ augroup my_keymap
 
 	" - resize horizontal-
 	noremap <C-w><C-down> :res -10<CR>
+
+	" - fzf file browser
+	noremap <C-f> :FZF<CR>
 augroup END
 
 " === enable autocomplete with neovim language client
@@ -237,3 +237,4 @@ augroup save_session
 	autocmd VimEnter * source .session.vim
 augroup END
 autocmd! save_session
+
