@@ -65,6 +65,21 @@ call plug#begin()
 	" vim test to show code coverage
 	Plug 'vim-test/vim-test'
 
+	" indent line
+	"Plug 'yggdroot/indentline'
+
+	" move line
+	Plug 'matze/vim-move'
+
+	" rainbow bracket
+	Plug 'luochen1990/rainbow'
+
+	" git wrapper
+	Plug 'tpope/vim-fugitive'
+
+	" tracks line file change
+	Plug 'vim-scripts/Changed'
+
 call plug#end()
 
 " enable copy clipboard to system clipboard
@@ -224,6 +239,17 @@ augroup my_keymap
 
 	" - fzf file browser
 	noremap <C-f> :FZF<CR>
+
+	" - move text
+	map <C-S-up> <A-k>
+	map <C-S-down> <A-j>
+	map <C-S-left> <A-h>
+	map <C-S-right> <A-l>
+augroup END
+
+augroup env_config
+	" enable rainbow brackets
+	let g:rainbow_active = 1
 augroup END
 
 " === enable autocomplete with neovim language client
@@ -237,4 +263,3 @@ augroup save_session
 	autocmd VimEnter * source .session.vim
 augroup END
 autocmd! save_session
-
