@@ -41,7 +41,8 @@ call plug#begin()
 	
 	" Java IDE
 	"Plug 'mfussenegger/nvim-jdtls'
-	"Plug 'vim-scripts/java.vim'
+	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	"Plug 'neoclide/coc-java'
 
 	" live autocomplete
 	"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -167,6 +168,14 @@ augroup go_env
 	
 augroup END
 
+augroup java_env
+	" - apply autocomplete
+	autocmd FileType java imap <C-CR> <C-y>
+
+	" - organize imports
+	autocmd! bufwritepost *.java call CocAction('organizeImport')
+augroup END
+augroup! java_env
 
 " === custom autocomplete themes ===
 " - set menu autocomplete color
@@ -264,6 +273,7 @@ augroup env_config
 
 	" neovim cmp config
 	lua require('config.nvim-cmp')
+
 augroup END
 
 " === enable autocomplete with neovim language client
