@@ -43,9 +43,15 @@ call plug#begin()
 	"Plug 'mfussenegger/nvim-jdtls'
 	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"Plug 'neoclide/coc-java'
+	
+	" Emmet for HTML
+	Plug 'mattn/emmet-vim'
 
-	" live autocomplete
-	"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	" JSON and YAML autoformat
+	Plug 'gennaro-tedesco/nvim-jqx'	
+
+	" vim auto pair
+	Plug 'jiangmiao/auto-pairs'
 
 	" neovim language client
 	Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': './install.sh'}
@@ -89,6 +95,9 @@ call plug#begin()
 	" neovim autocomplete For vsnip users.
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
+
+	" nvim nvim-treesitter
+	Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 " enable copy clipboard to system clipboard
@@ -146,8 +155,8 @@ augroup go_env
 	autocmd FileType go noremap <C-j> :GoAddTags<CR>
 	
 	" - go to function/method definition
-	autocmd FileType go noremap <C-d><C-d> :GoDef<CR>
-	
+	autocmd FileType go noremap <C-A-d> :GoDef<CR>
+
 	" - go to type definition
 	autocmd FileType go noremap <C-d><C-t> :GoDefType<CR>
 	
@@ -186,34 +195,34 @@ highlight PmenuSel ctermbg=white ctermfg=blue
 
 " === auto close brackets ===
 " - ()
-inoremap ( ()<left>
-inoremap (> (<CR><CR>)<up><tab>
+"inoremap ( ()<left>
+"inoremap (> (<CR><CR>)<up><tab>
 
 " - {}
-inoremap { {}<left>
-inoremap {> {<CR><CR>}<left><up><tab>
+"inoremap { {}<left>
+"inoremap {> {<CR><CR>}<left><up><tab>
 
 " - []
-inoremap [ []<left>
-inoremap [> [<CR><CR>]<up><tab>
+"inoremap [ []<left>
+"inoremap [> [<CR><CR>]<up><tab>
 
 " - ''
-inoremap ' ''<left>
+"inoremap ' ''<left>
 
 " - ""
-inoremap " ""<left>
+"inoremap " ""<left>
 
 " - <>
-inoremap <> <><left>
+"inoremap <> <><left>
 
 " - ``
-inoremap ` ``<left>
+"inoremap ` ``<left>
 
 " - ;
-inoremap ;. ;<CR>
+"inoremap ;. ;<CR>
 
 " - ,
-inoremap ,. ,<CR>
+"inoremap ,. ,<CR>
 
 " === my custom keyboard shortcut ===
 augroup my_keymap
@@ -265,6 +274,9 @@ augroup my_keymap
 
 	" - format with neoformat
 	noremap <A-f> :Neoformat<CR>
+
+	" - multiple cursor
+	map <C-d> <C-n>
 augroup END
 
 augroup env_config
@@ -278,4 +290,3 @@ augroup END
 
 " === enable autocomplete with neovim language client
 let g:LanguageClient_serverCommands = {'go': ['gopls'], 'java': ['jdtls']}
-
