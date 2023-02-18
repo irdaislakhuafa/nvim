@@ -40,7 +40,7 @@ call plug#begin()
 	Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
 	
 	" Java IDE
-	"Plug 'mfussenegger/nvim-jdtls'
+	Plug 'mfussenegger/nvim-jdtls'
 	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"Plug 'neoclide/coc-java'
 	
@@ -49,6 +49,9 @@ call plug#begin()
 
 	" JSON and YAML autoformat
 	Plug 'gennaro-tedesco/nvim-jqx'	
+
+	" code formatter
+	Plug 'chiel92/vim-autoformat'
 
 	" vim auto pair
 	Plug 'jiangmiao/auto-pairs'
@@ -98,6 +101,13 @@ call plug#begin()
 
 	" nvim nvim-treesitter
 	Plug 'nvim-treesitter/nvim-treesitter'
+	"Plug 'kien/rainbow_parentheses.vim'
+
+	" Aligning text with Tabular.vim
+	Plug 'godlygeek/tabular'
+
+	" Mason package manager
+	Plug 'williamboman/mason.nvim'	
 call plug#end()
 
 " enable copy clipboard to system clipboard
@@ -182,47 +192,16 @@ augroup java_env
 	autocmd FileType java imap <C-CR> <C-y>
 
 	" - organize imports
-	autocmd! bufwritepost *.java call CocAction('organizeImport')
+	"autocmd! bufwritepost *.java call CocAction('organizeImport')
 augroup END
 augroup! java_env
 
 " === custom autocomplete themes ===
 " - set menu autocomplete color
-highlight Pmenu ctermbg=blue ctermfg=white
+highlight Pmenu ctermbg=16 ctermfg=white
 
 " - set selected menu autocomplete color
-highlight PmenuSel ctermbg=white ctermfg=blue
-
-" === auto close brackets ===
-" - ()
-"inoremap ( ()<left>
-"inoremap (> (<CR><CR>)<up><tab>
-
-" - {}
-"inoremap { {}<left>
-"inoremap {> {<CR><CR>}<left><up><tab>
-
-" - []
-"inoremap [ []<left>
-"inoremap [> [<CR><CR>]<up><tab>
-
-" - ''
-"inoremap ' ''<left>
-
-" - ""
-"inoremap " ""<left>
-
-" - <>
-"inoremap <> <><left>
-
-" - ``
-"inoremap ` ``<left>
-
-" - ;
-"inoremap ;. ;<CR>
-
-" - ,
-"inoremap ,. ,<CR>
+highlight PmenuSel ctermbg=white ctermfg=16
 
 " === my custom keyboard shortcut ===
 augroup my_keymap
@@ -273,7 +252,7 @@ augroup my_keymap
 	noremap <C-h> :noh<CR>
 
 	" - format with neoformat
-	noremap <A-f> :Neoformat<CR>
+	noremap <A-f> :Autoformat<CR>
 
 	" - multiple cursor
 	map <C-d> <C-n>
@@ -286,7 +265,10 @@ augroup env_config
 	" neovim cmp config
 	lua require('config.nvim-cmp')
 
+	" setup mason portable package manager
+	lua require("mason").setup()	
 augroup END
 
 " === enable autocomplete with neovim language client
 let g:LanguageClient_serverCommands = {'go': ['gopls'], 'java': ['jdtls']}
+
