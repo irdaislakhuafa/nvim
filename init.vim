@@ -10,6 +10,9 @@ source ~/.config/nvim/scripts/env/env.vim
 " plugins
 source ~/.config/nvim/scripts/plugins.vim
 
+" keymaps
+source ~/.config/nvim/scripts/keymaps.vim
+
 " show number line 
 set number
 
