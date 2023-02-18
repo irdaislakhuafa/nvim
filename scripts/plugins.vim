@@ -7,7 +7,7 @@ call plug#begin()
 
 	" Go IDE
 	Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
-	
+
 	" Java IDE
 	Plug 'mfussenegger/nvim-jdtls'
 	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
