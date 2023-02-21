@@ -51,4 +51,7 @@ augroup my_keymap
 
 	" - multiple cursor
 	map <C-d> <C-n>
+
+	" === Tabularize ===
+	noremap <leader><Space> :Tabularize /
 augroup END

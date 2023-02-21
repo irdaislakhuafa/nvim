@@ -63,5 +63,7 @@ augroup go_env
 
 	" - go remove tags
 	autocmd FileType go noremap <C-r><C-t> :GoRemoveTags<CR>
-	
+
+	" - go add specific tags
+	autocmd FileType go noremap <A-t> :GoAddTags 
 augroup END
