@@ -19,8 +19,15 @@ call plug#begin()
 	" JSON and YAML autoformat
 	Plug 'gennaro-tedesco/nvim-jqx'	
 
+	" Dockerfile support
+	Plug 'ekalinin/dockerfile.vim'
+
+	" Indentation guides
+	"Plug 'nathanaelkane/vim-indent-guides'
+
 	" code formatter
 	Plug 'chiel92/vim-autoformat'
+	Plug 'sbdchd/neoformat'
 
 	" vim auto pair
 	Plug 'jiangmiao/auto-pairs'
@@ -28,6 +35,8 @@ call plug#begin()
 	" neovim language client
 	Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': './install.sh'}
 	Plug 'neovim/nvim-lspconfig'
+
+	" syntax hightlighting
 
 	" add icons
 	"Plug 'ryanoasis/vim-devicons'
@@ -55,8 +64,8 @@ call plug#begin()
 	" git wrapper
 	Plug 'tpope/vim-fugitive'
 
-	" code formatter
-	Plug 'sbdchd/neoformat'
+	" git blamer like git lens
+	Plug 'APZelos/blamer.nvim'
 
 	" neovim autocomplete
    	Plug 'hrsh7th/cmp-nvim-lsp'

@@ -1,5 +1,5 @@
 " autoreload init.vim on write
-autocmd! bufwritepost init.vim source %
+autocmd! bufwritepost *.vim source ~/.config/nvim/init.vim
 
 " enable lua support
 let g:lua_enabled=1
@@ -63,10 +63,13 @@ augroup env_config
 
 	" setup mason portable package manager
 	lua require("mason").setup()	
+
+	" rainbow parentheses mas token
+	let g:rbpt_max = 100
+
+	autocmd FileType * BlamerShow
 augroup END
 
 " === enable autocomplete with neovim language client
 let g:LanguageClient_serverCommands = {'go': ['gopls'], 'java': ['jdtls']}
 
-" rainbow parentheses
-let g:rbpt_max = 100
