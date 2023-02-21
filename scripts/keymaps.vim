@@ -54,4 +54,7 @@ augroup my_keymap
 
 	" === Tabularize ===
 	noremap <leader><Space> :Tabularize /
+
+	" git blamer/git lens toggle
+	noremap <A-b> :BlamerToggle <CR>	
 augroup END
