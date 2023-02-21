@@ -50,6 +50,7 @@ call plug#begin()
 
 	" rainbow bracket
 	Plug 'luochen1990/rainbow'
+	Plug 'kien/rainbow_parentheses.vim'
 
 	" git wrapper
 	Plug 'tpope/vim-fugitive'

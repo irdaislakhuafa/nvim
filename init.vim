@@ -68,3 +68,5 @@ augroup END
 " === enable autocomplete with neovim language client
 let g:LanguageClient_serverCommands = {'go': ['gopls'], 'java': ['jdtls']}
 
+" rainbow parentheses
+let g:rbpt_max = 100
