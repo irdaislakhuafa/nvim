@@ -64,6 +64,8 @@ call plug#begin()
 	" git wrapper
 	Plug 'tpope/vim-fugitive'
 
+	" show git diff
+	Plug 'airblade/vim-gitgutter'
 	" git blamer like git lens
 	Plug 'APZelos/blamer.nvim'
 
