@@ -53,7 +53,7 @@ augroup my_keymap
 	map <C-d> <C-n>
 
 	" === Tabularize ===
-	noremap <leader><Space> :Tabularize /
+	noremap <A-t> :Tabularize /
 
 	" git blamer/git lens toggle
 	noremap <A-b> :BlamerToggle <CR>	

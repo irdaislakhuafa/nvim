@@ -2,6 +2,9 @@ call plug#begin()
 	" nerdtree file browser 
 	Plug 'scrooloose/nerdtree'
 
+	" text case modification
+	Plug 'arthurxavierx/vim-caser'
+
 	" fzf file browser
 	Plug 'junegunn/fzf'
 
