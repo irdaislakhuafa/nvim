@@ -66,4 +66,7 @@ augroup go_env
 
 	" - go add specific tags
 	autocmd FileType go noremap <A-t> :GoAddTags 
+
+	" - go implement interface
+	autocmd FileType go noremap <leader>im :GoImpl 
 augroup END
