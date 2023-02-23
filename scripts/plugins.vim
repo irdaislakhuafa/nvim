@@ -29,7 +29,7 @@ call plug#begin()
 	"Plug 'nathanaelkane/vim-indent-guides'
 
 	" code formatter
-	Plug 'chiel92/vim-autoformat'
+	"Plug 'chiel92/vim-autoformat'
 	Plug 'sbdchd/neoformat'
 
 	" vim auto pair

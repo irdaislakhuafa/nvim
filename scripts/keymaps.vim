@@ -47,7 +47,7 @@ augroup my_keymap
 	noremap <C-h> :noh<CR>
 
 	" - format with neoformat
-	noremap <A-f> :Autoformat<CR>
+	noremap <A-f> :Neoformat<CR>
 
 	" - multiple cursor
 	map <C-d> <C-n>
