@@ -19,6 +19,9 @@ augroup my_keymap
 	" - redo 
 	noremap <C-y> :redo<CR>
 
+	" - undo
+	noremap <C-u> :undo<CR>
+
 	" - go to previus tab
 	noremap <C-b> :e#<CR>
 
