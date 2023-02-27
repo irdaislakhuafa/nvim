@@ -71,5 +71,5 @@ augroup go_env
 	autocmd FileType go noremap <leader>im :GoImpl 
 
 	" - go generate error handling
-	autocmd FileType go noremap <leader>ifer :GoIfErr<CR>
+	autocmd FileType go noremap <leader>ifr :GoIfErr<CR>
 augroup END
