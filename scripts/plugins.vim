@@ -93,4 +93,7 @@ call plug#begin()
 
 	" Mason package manager
 	Plug 'williamboman/mason.nvim'	
+
+	" vs code dark+ color scheme
+	Plug 'martinsione/darkplus.nvim'
 call plug#end()
