@@ -1,6 +1,7 @@
 call plug#begin()
 	" nerdtree file browser 
-	Plug 'scrooloose/nerdtree'
+	Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+	Plug 'nvim-tree/nvim-tree.lua'
 
 	" text case modification
 	Plug 'arthurxavierx/vim-caser'

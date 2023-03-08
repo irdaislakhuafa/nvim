@@ -60,4 +60,6 @@ augroup my_keymap
 
 	" git blamer/git lens toggle
 	noremap <A-b> :BlamerToggle <CR>	
+
+	noremap <C-l> :NvimTreeToggle<CR>
 augroup END

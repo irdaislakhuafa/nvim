@@ -43,9 +43,6 @@ set clipboard+=unnamedplus
 " set background dark
 set background=dark
 
-" === NERDTree ===
-noremap <C-l> :NERDTreeToggle<CR>
-
 " === custom autocomplete themes ===
 " - set menu autocomplete color
 highlight Pmenu ctermbg=16 ctermfg=white
@@ -67,6 +64,10 @@ augroup env_config
 	" rainbow parentheses mas token
 	let g:rbpt_max = 100
 
+	" Nvim tree file explorer
+	lua require("nvim-tree").setup()
+
+	" show git code diff 
 	autocmd FileType * BlamerShow
 augroup END
 
