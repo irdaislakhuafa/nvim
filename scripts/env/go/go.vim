@@ -42,6 +42,7 @@ augroup go_env
 	" --- shortcut --- 
 	" - add json tags in Go
 	autocmd FileType go noremap <C-j> :GoAddTags<CR>
+	autocmd FileType go noremap <leader>j :GoAddTags<CR>
 	
 	" - go to function/method definition
 	autocmd FileType go noremap <C-A-d> :GoDef<CR>
@@ -51,15 +52,19 @@ augroup go_env
 	
 	" - go to others function/method definition
 	autocmd FileType go noremap <C-d><C-f> :GoDecls<CR>
+	autocmd FileType go noremap <leader>df :GoDecls<CR>
 	
 	" - go documentation viewer
 	autocmd FileType go noremap <C-o><C-d> :GoDoc<CR>
+	autocmd FileType go noremap <leader>od :GoDoc<CR>
 	
 	" - go mod reload
 	autocmd FileType go noremap <C-m><C-r> :GoModReload<CR>
+	autocmd FileType go noremap <leader>ms :GoModReload<CR>
 
 	" - go fill struct
 	autocmd FileType go noremap <C-f><C-s> :GoFillStruct<CR>
+	autocmd FileType go noremap <leader>fs :GoFillStruct<CR>
 
 	" - go remove tags
 	autocmd FileType go noremap <C-r><C-t> :GoRemoveTags<CR>
