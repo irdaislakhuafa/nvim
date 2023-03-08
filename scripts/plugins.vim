@@ -40,11 +40,6 @@ call plug#begin()
 	Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': './install.sh'}
 	Plug 'neovim/nvim-lspconfig'
 
-	" syntax hightlighting
-
-	" add icons
-	"Plug 'ryanoasis/vim-devicons'
-
 	" graphql file support
 	Plug 'jparise/vim-graphql'
 
