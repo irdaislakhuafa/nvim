@@ -28,6 +28,7 @@ call plug#begin()
 
 	" Indentation guides
 	"Plug 'nathanaelkane/vim-indent-guides'
+	Plug 'lukas-reineke/indent-blankline.nvim'
 
 	" code formatter
 	"Plug 'chiel92/vim-autoformat'

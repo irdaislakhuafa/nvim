@@ -58,6 +58,9 @@ augroup env_config
 	" neovim cmp config
 	lua require('config.nvim-cmp')
 
+	" indent guides
+	lua require('config.indent-blankline')
+
 	" setup mason portable package manager
 	lua require("mason").setup()	
 
