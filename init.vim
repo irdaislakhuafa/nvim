@@ -13,6 +13,9 @@ source ~/.config/nvim/scripts/plugins.vim
 " keymaps
 source ~/.config/nvim/scripts/keymaps.vim
 
+" colors scheme
+source ~/.config/nvim/scripts/colorscheme.vim
+
 " show number line 
 set number
 
@@ -42,14 +45,6 @@ set clipboard+=unnamedplus
 
 " set background dark
 set background=dark
-
-" === custom autocomplete themes ===
-" - set menu autocomplete color
-highlight Pmenu ctermbg=16 ctermfg=white
-
-" - set selected menu autocomplete color
-highlight PmenuSel ctermbg=white ctermfg=16
-
 
 augroup env_config
 	" enable rainbow brackets
