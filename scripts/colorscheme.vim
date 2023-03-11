@@ -10,8 +10,8 @@ hi String  ctermfg=87
 hi Comment ctermfg=8
 hi Number  ctermfg=14
 hi Constant  ctermfg=16
-hi Keyword  ctermfg=33
-hi Blamer  ctermfg=12
+hi Keyword  ctermfg=69
+hi Blamer  ctermfg=195
 "hi Conditional
 "hi Cursor
 "hi Debug
