@@ -7,10 +7,11 @@ hi Boolean  ctermfg=45
 hi Character  ctermfg=123
 hi Float  ctermfg=4
 hi String  ctermfg=87
-hi Comment ctermfg=15
+hi Comment ctermfg=8
 hi Number  ctermfg=14
 hi Constant  ctermfg=16
 hi Keyword  ctermfg=33
+hi Blamer  ctermfg=12
 "hi Conditional
 "hi Cursor
 "hi Debug
@@ -27,7 +28,7 @@ hi Function  ctermfg=45
 hi Identifier  ctermfg=75
 "hi IncSearch
 "hi Label
-"hi LineNr
+hi LineNr ctermfg=123
 "hi Macro
 "hi ModeMsg
 "hi MoreMsg
