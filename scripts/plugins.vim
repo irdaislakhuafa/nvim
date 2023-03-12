@@ -14,7 +14,6 @@ call plug#begin()
 
 	" Java IDE
 	Plug 'mfussenegger/nvim-jdtls'
-	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"Plug 'neoclide/coc-java'
 	
 	" Emmet for HTML
@@ -29,12 +28,15 @@ call plug#begin()
 	" CSS colored
 	Plug 'ap/vim-css-color'
 
+	" JS
+	Plug 'yuezk/vim-js'
+	Plug 'HerringtonDarkholme/yats.vim'
+	Plug 'maxmellon/vim-jsx-pretty'
+	
 	" Indentation guides
-	"Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'lukas-reineke/indent-blankline.nvim'
 
 	" code formatter
-	"Plug 'chiel92/vim-autoformat'
 	Plug 'sbdchd/neoformat'
 
 	" vim auto pair
@@ -43,6 +45,9 @@ call plug#begin()
 	" neovim language client
 	Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': './install.sh'}
 	Plug 'neovim/nvim-lspconfig'
+	
+	" Neovim COC
+	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install'}
 
 	" graphql file support
 	Plug 'jparise/vim-graphql'
@@ -73,12 +78,12 @@ call plug#begin()
 	Plug 'APZelos/blamer.nvim'
 
 	" neovim autocomplete
-   	Plug 'hrsh7th/cmp-nvim-lsp'
-   	Plug 'hrsh7th/cmp-buffer'
-   	Plug 'hrsh7th/cmp-path'
-   	Plug 'hrsh7th/cmp-cmdline'
-   	Plug 'hrsh7th/nvim-cmp'
-      
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+
 	" neovim autocomplete For vsnip users.
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
