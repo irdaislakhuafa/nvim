@@ -26,6 +26,9 @@ call plug#begin()
 	" Dockerfile support
 	Plug 'ekalinin/dockerfile.vim'
 
+	" CSS colored
+	Plug 'ap/vim-css-color'
+
 	" Indentation guides
 	"Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'lukas-reineke/indent-blankline.nvim'
