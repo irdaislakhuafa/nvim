@@ -9,7 +9,7 @@ hi Float  ctermfg=4
 hi String  ctermfg=87
 hi Comment ctermfg=8
 hi Number  ctermfg=14
-hi Constant  ctermfg=16
+hi Constant  ctermfg=195
 hi Keyword  ctermfg=69
 hi Blamer  ctermfg=195
 "hi Conditional
