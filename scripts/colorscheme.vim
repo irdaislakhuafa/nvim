@@ -17,9 +17,9 @@ hi Blamer  ctermfg=195
 "hi Debug
 "hi Define
 "hi Delimiter
-"hi DiffAdd
-"hi DiffChange
-"hi DiffDelete
+hi DiffAdd  ctermfg=15 ctermbg=10
+hi DiffChange  ctermfg=15 ctermbg=3
+hi DiffDelete  ctermfg=15 ctermbg=1
 "hi DiffText
 "hi Directory
 "hi ErrorMsg
