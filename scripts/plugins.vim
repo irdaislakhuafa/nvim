@@ -47,7 +47,7 @@ call plug#begin()
 	Plug 'neovim/nvim-lspconfig'
 	
 	" Neovim COC
-	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install'}
+	"Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install'}
 
 	" graphql file support
 	Plug 'jparise/vim-graphql'
