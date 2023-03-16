@@ -8,6 +8,7 @@ call plug#begin()
 
 	" fzf file browser
 	Plug 'junegunn/fzf'
+	Plug 'junegunn/fzf.vim'
 
 	" Go IDE
 	Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
