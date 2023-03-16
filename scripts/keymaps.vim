@@ -62,5 +62,9 @@ augroup my_keymap
 	" git blamer/git lens toggle
 	noremap <A-b> :BlamerToggle <CR>	
 
+	" file explorer
 	noremap <C-l> :NvimTreeToggle<CR>
+
+	" show command prompt like vs code
+	noremap <C-S-p> :Commands<CR>
 augroup END
