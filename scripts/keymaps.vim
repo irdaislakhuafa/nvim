@@ -66,5 +66,8 @@ augroup my_keymap
 	noremap <C-l> :NvimTreeToggle<CR>
 
 	" show command prompt like vs code
-	noremap <C-S-p> :Commands<CR>
+	noremap <C-space> :Commands<CR>
+
+	" show commits
+	noremap <A-space> :Commits<CR>
 augroup END
