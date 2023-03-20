@@ -72,9 +72,12 @@ call plug#begin()
 
 	" git wrapper
 	Plug 'tpope/vim-fugitive'
+	" git conflict resolver
+	Plug 'christoomey/vim-conflicted'
 
 	" show git diff
 	Plug 'airblade/vim-gitgutter'
+	
 	" git blamer like git lens
 	Plug 'APZelos/blamer.nvim'
 

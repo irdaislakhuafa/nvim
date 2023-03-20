@@ -48,7 +48,7 @@ hi Statement  ctermfg=81
 "hi StorageClass
 "hi Structure
 "hi Tag
-hi Title ctermfg=16
+hi Title ctermfg=2
 "hi Todo
 "hi TypeDef
 hi Type  ctermfg=45

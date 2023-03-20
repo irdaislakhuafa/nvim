@@ -32,10 +32,10 @@ augroup my_keymap
 	noremap <C-w><C-left> :vertical res -10<CR>
 
 	" - resize horizontal+
-	noremap <C-w><C-up> :res +10<CR>
+	noremap <C-w><C-up> :res +2<CR>
 
 	" - resize horizontal-
-	noremap <C-w><C-down> :res -10<CR>
+	noremap <C-w><C-down> :res -2<CR>
 
 	" - fzf file browser
 	noremap <C-f> :FZF<CR>
