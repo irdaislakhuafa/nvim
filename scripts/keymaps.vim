@@ -69,5 +69,5 @@ augroup my_keymap
 	noremap <C-space> :Commands<CR>
 
 	" show commits
-	noremap <A-space> :Commits<CR>
+	noremap <leader>gc :Commits<CR>
 augroup END

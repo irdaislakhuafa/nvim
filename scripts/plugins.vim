@@ -37,9 +37,6 @@ call plug#begin()
 	" Indentation guides
 	Plug 'lukas-reineke/indent-blankline.nvim'
 
-	" vim code folding like expand/collapse code
-	Plug 'pseewald/vim-anyfold'
-
 	" code formatter
 	Plug 'sbdchd/neoformat'
 
