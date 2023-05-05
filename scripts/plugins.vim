@@ -12,6 +12,10 @@ call plug#begin()
 
 	" Go IDE
 	Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
+	Plug 'nvim-treesitter/nvim-treesitter'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'ray-x/go.nvim'
+	Plug 'ray-x/guihua.lua' "recommended if need floating window support
 
 	" Java IDE
 	Plug 'mfussenegger/nvim-jdtls'

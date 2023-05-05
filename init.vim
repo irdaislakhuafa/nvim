@@ -16,6 +16,9 @@ source ~/.config/nvim/scripts/keymaps.vim
 " colors scheme
 source ~/.config/nvim/scripts/colorscheme.vim
 
+" init lua support
+source ~/.config/nvim/lua/init-lua.vim
+
 " show number line 
 set number
 
@@ -49,21 +52,6 @@ set background=dark
 augroup env_config
 	" enable rainbow brackets
 	let g:rainbow_active = 1
-
-	" neovim cmp config
-	lua require('config.nvim-cmp')
-
-	" indent guides
-	lua require('config.indent-blankline')
-
-	" setup mason portable package manager
-	lua require("mason").setup()	
-
-	" rainbow parentheses mas token
-	let g:rbpt_max = 100
-
-	" Nvim tree file explorer
-	lua require("nvim-tree").setup()
 
 	" show git code diff 
 	autocmd FileType * BlamerShow
