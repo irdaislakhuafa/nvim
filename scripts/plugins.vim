@@ -11,7 +11,7 @@ call plug#begin()
 	Plug 'junegunn/fzf.vim'
 
 	" Go IDE
-	Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
+	"Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries' }
 	Plug 'nvim-treesitter/nvim-treesitter'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'ray-x/go.nvim'

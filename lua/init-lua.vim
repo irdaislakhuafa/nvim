@@ -5,10 +5,14 @@ lua require('config.nvim-cmp')
 lua require('config.indent-blankline')
 
 " setup mason portable package manager
-lua require("mason").setup()	
+lua require('config.mason')
+
+" Nvim tree file explorer
+lua require('config.nvim-tree')
+
+" ray-x/go.nvim
+lua require('config.go-nvim')
 
 " rainbow parentheses mas token
 let g:rbpt_max = 100
 
-" Nvim tree file explorer
-lua require("nvim-tree").setup()
