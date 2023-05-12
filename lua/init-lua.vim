@@ -11,7 +11,10 @@ lua require('config.mason')
 lua require('config.nvim-tree')
 
 " ray-x/go.nvim
-lua require('config.go-nvim')
+"lua require('config.go-nvim')
+
+" nvim docs view
+lua require('config.nvim-docs-view')
 
 " rainbow parentheses mas token
 let g:rbpt_max = 100
