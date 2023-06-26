@@ -59,3 +59,6 @@ hi Type  ctermfg=45
 "hi WildMenu
 
 "Graphical colors
+"
+"Cursor line
+"hi CursorLine ctermbg=16

@@ -33,3 +33,6 @@ set clipboard+=unnamedplus
 
 " set background dark
 set background=dark
+
+" underline 
+set cursorline

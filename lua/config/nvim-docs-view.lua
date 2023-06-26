@@ -1,4 +1,4 @@
 require('docs-view').setup {
-	position = 'bottom',
+	position = 'right',
 	width = 60,
 }
